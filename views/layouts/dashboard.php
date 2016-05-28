@@ -75,13 +75,13 @@ AppAsset::register($this);
 
                  <div class="col-md-2">
                      <div id="dashboard_navigation " class="list-group">
-                         <a class="list-group-item " href="">Mark Attendance</a>
+                         <a class="list-group-item " href="index.php?r=dashboard/selectclass">Mark Attendance</a>
                          <a class="list-group-item collapsed" href="#navigation-300" data-toggle="collapse" data-parent="#dashboard_navigation" aria-expanded="false">
                              Class
                              <b class="caret"></b>
                          </a>
                          <div id="navigation-300" class="submenu panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                              <a class="list-group-item" href="" >Classes list</a>
+                              <a class="list-group-item" href="index.php?r=dashboard/listclass" >Classes list</a>
                                 <a class="list-group-item" href="index.php?r=dashboard/addclass" >Add Class</a>
                          </div>
                          <a class="list-group-item collapsed " href="#navigation-301" data-toggle="collapse" data-parent="#dashboard_navigation" aria-expanded="false">
@@ -92,14 +92,7 @@ AppAsset::register($this);
                              <a class="list-group-item" href="" >Students list</a>
                              <a class="list-group-item" href="index.php?r=dashboard/addstudent" >Add Student</a>
                          </div>
-                        <!-- <a class="list-group-item collapsed " href="#navigation-302" data-toggle="collapse" data-parent="#dashboard_navigation" aria-expanded="false">
-                             Subjects
-                             <b class="caret"></b>
-                         </a>
-                         <div id="navigation-302" class="submenu panel-collapse collapse" aria-expanded="false" style="height: 0px;">
-                             <a class="list-group-item" href="" >Subject list</a>
-                             <a class="list-group-item" href="" >Add Subject</a>
-                         </div>-->
+
                      </div>
                  </div>
 

@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\Attendance;
 use app\models\Subject;
 use Yii;
 use app\models\AddStudent_Form;
@@ -59,7 +60,34 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function actionListclass(){}
+    public function actionListclass(){
+        return $this->render('view_class', [
+
+        ]);
+    }
+
+    public function actionSelectclass(){
+        return $this->render('select_class',[]);
+    }
+
+    public function actionMarkattendance($class_id){
+        $email = \Yii::$app->user->identity->email ;
+        $students = Student::find()->where([
+            'class_id' => $class_id ,
+        ])->all();
+
+        $model = new Attendance();
+        if($model->load(Yii::$app->request->post())){
+            if($success = $model->add()){
+                return $this->redirect('index.php?r=dashboard/initialize');
+            }
+        }
+
+        return $this->render('student_list_for_attendance',[
+            'model' => $model ,
+            'students' => $students
+        ]);
+    }
 
     public function actionAddstudent(){
 
